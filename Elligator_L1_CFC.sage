@@ -19,16 +19,16 @@ for m in range(1,100000):
             y=sqrt(f)
             e1=(-x*u*(x-l-1))^q
             if e1 == 1:
-                x0=x*(x-l-1)*u
-                x1=1/x0
                 if 1<=Integer(y) and Integer(y)<= 2^254-9:
-                    t0=x^2
-                    t1=-t0*x1
-                    r=sqrt(t1)
+                    x1=(x-l-1)*u
+					x2=1/x1
+					x3=-x*x2
+                    r=sqrt(x3)
                 else:
-                    t0=(x-l-1)^2
-                    t1=-t0*x1
-                    r=sqrt(t1)
+                    x1=x*u
+					x2=1/x1
+                    x3=-(x-l-1)*x2
+                    r=sqrt(x3)
                 u0=u*r^2
                 u1=1/(1+u0)
                 u2=(l+1)*u1
